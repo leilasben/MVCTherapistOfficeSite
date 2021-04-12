@@ -1,0 +1,123 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/client" method="POST" autocomplete="off"> <!-- while testing the page, previous form data was showing up, so i turned off autocomplete to prevent this -->
+    <input type = "hidden" name="_id" value="{{client._id}}">   <!-- for updating, this obtains the previously entered data but it is hidden from the user. otherwise, you would have to update all the data again -->
+    <div class = "form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" name="title" placeholder="Title..." value={{client.title}}>
+        <small id="titleHelp" class="form-text text-muted">	Titles	should	include	Mx,	Ms,	Mr,	Mrs, Miss, Dr or Other (specify)</small>
+    </div>
+    <div class = "form-group">
+        <label>First Name*</label>
+        <input type="text" class="form-control" name="fname" placeholder="First Name..." value="{{client.fname}}">
+        <div class = "text-danger">
+            {{client.fnameError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Surname*</label>
+        <input type="text" class="form-control" name="sname" placeholder="Surname..." value="{{client.sname}}">
+        <div class = "text-danger">
+            {{client.snameError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Mobile Number*</label>
+        <input type="text" class="form-control" name="mobilePhone" placeholder="Mobile Number..." value="{{client.mobilePhone}}">
+        <div class = "text-danger">
+            {{client.mobilePhoneError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Home Phone Number*</label>
+        <input type="text" class="form-control" name="homePhone" placeholder="Home Phone Number..." value="{{client.homePhone}}">
+        <div class = "text-danger">
+            {{client.homePhoneError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Email Address*</label>
+        <input type="text" class="form-control" name="email" placeholder="Email Address..." value="{{client.email}}">
+        <div class = "text-danger">
+            {{client.emailError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Address Line 1*</label>
+        <input type="text" class="form-control" name="addressLine1" placeholder="Address Line 1..." value="{{client.addressLine1}}">
+        <div class = "text-danger">
+            {{client.addressLine1Error}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Address Line 2</label>
+        <input type="text" class="form-control" name="addressLine2" placeholder="Address Line 2..." value="{{client.addressLine2}}">
+    </div>
+    <div class = "form-group">
+        <label>Town*</label>
+        <input type="text" class="form-control" name="town" placeholder="Town..." value="{{client.town}}">
+        <div class = "text-danger">
+            {{client.townError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>County/City*</label>
+        <input type="text" class="form-control" name="countyCity" placeholder="County/City..." value="{{client.countyCity}}">
+        <div class = "text-danger">
+            {{client.countyCityError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Eircode</label>
+        <input type="text" class="form-control" name="eircode" placeholder="Eircode..." value="{{client.eircode}}">
+        <div class = "text-danger">
+            {{client.eircodeError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Date of Birth*</label>
+        <input type="Date" class="form-control" name="DOB" placeholder="Date of Birth..." value="{{client.DOB}}">
+        <div class = "text-danger">
+            {{client.DOBError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Parent/Guardians name if under 18*</label>
+        <input type="text" class="form-control" name="pgName" placeholder="Parent/Guardians name if under 18..." value="{{client.pgName}}">
+        <div class = "text-danger">
+            {{client.pgNameError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Permission [Y/N] to leave message on Mobile Phone, Home Phone and Email Address*</label>
+        <input type="text" class="form-control" name="permissions" placeholder="Y/N" value="{{client.permissions}}">
+        <div class = "text-danger">
+            {{client.permissionsError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Registration Date*</label>
+        <input type="Date" class="form-control" name="registrationDate" placeholder="dd/mm/yyyy" value="{{client.registrationDate}}">
+        <div class = "text-danger">
+            {{client.registrationDateError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Marital Status*</label>
+        <input type="text" class="form-control" name="maritalStatus" placeholder="Marital Status..." value="{{client.maritalStatus}}">
+                <small id="titleHelp" class="form-text text-muted">Never Married, Domestic Partnership, Married, Separated, Divorced,	Widowed</small>
+        <div class = "text-danger">
+            {{client.maritalStatusError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Referred By</label>
+        <input type="text" class="form-control" name="referredBy" placeholder="Referred By..." value="{{client.referredBy}}">
+    </div>
+    <div class="form-group"> <!-- creating buttons with bootstrap to navigate through the web page -->
+        <button type = "submit" class="btn btn-info"><i class = "fa fa-database"></i> Submit</button>    <!-- submit button with styling from bootstrap -->
+        <a class="btn btn-secondary" href="/client/list"><i class="fa fa-list-alt"></i> View All</a>
+        <a class="btn btn-secondary" style="background-color: blue;" href="/session"><i class="fa fa-list-alt"></i> Session Entry</a>
+        <a class="btn btn-secondary" style="background-color: lightblue;" href="/therapist"><i class="fa fa-list-alt"></i> Therapist Entry</a>
+    </div>
+</form>

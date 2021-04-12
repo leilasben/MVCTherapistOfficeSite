@@ -1,0 +1,83 @@
+<h3>{{viewTitle}}</h3>
+
+<form action="/session" method="POST" autocomplete="off"> <!-- while testing the page, previous form data was showing up, so i turned off autocomplete to prevent this -->
+    <input type = "hidden" name="_id" value="{{session._id}}">  <!-- for updating, this obtains the previously entered data but it is hidden from the user. otherwise, you would have to update all the data again -->
+    <div class = "form-group">
+        <label>Session Date*</label>
+        <input type="Date" class="form-control" name="sessionDate" placeholder="DD/MM/YYYY" value={{session.sessionDate}}>
+        <div class = "text-danger">
+            {{session.sessionDateError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Session Time*</label>
+        <input type="text" class="form-control" name="sessionTime" placeholder="hh:mm:ss" value="{{session.sessionTime}}">
+        <div class = "text-danger">
+            {{session.sessionTimeError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Client(s)*</label>
+        <input type="text" class="form-control" name="clients" placeholder="One or more clients..." value="{{session.clients}}">
+        <div class = "text-danger">
+            {{session.clientsError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Therapist Name*</label>
+        <input type="text" class="form-control" name="therapist" placeholder="Therapist Name..." value="{{session.therapist}}">
+        <div class = "text-danger">
+            {{session.therapistError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Fee (€)*</label>
+        <input type="text" class="form-control" name="fee" placeholder="€€€..." value="{{session.fee}}">
+        <div class = "text-danger">
+            {{session.feeError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Session Number*</label>
+        <input type="text" class="form-control" name="sessionNumber" placeholder="Session Number" value="{{session.sessionNumber}}">
+        <div class = "text-danger">
+            {{session.sessionNumberError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Session Duration*</label>
+        <input type="text" class="form-control" name="sessionDuration" placeholder="Duration..." value="{{session.sessionDuration}}">
+        <small id="titleHelp" class="form-text text-muted">Minutes/Cancelled/No Show</small>
+        <div class = "text-danger">
+            {{session.sessionDurationError}}
+        </div>
+        </div>
+    <div class = "form-group">
+        <label>Session Type*</label>
+        <input type="text" class="form-control" name="sessionType" placeholder="Type..." value="{{session.sessionType}}">
+                <small id="titleHelp" class="form-text text-muted">Intake, Psychotherapy, Assessment, Other(Specify)</small>
+        <div class = "text-danger">
+            {{session.typeError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Issue Flag*</label>
+        <input type="text" class="form-control" name="issueFlag" placeholder="Y/N" value="{{session.issueFlag}}">
+        <div class = "text-danger">
+            {{session.issueFlagError}}
+        </div>
+    </div>
+    <div class = "form-group">
+        <label>Session Notes*</label>
+        <input type="text" class="form-control" name="sessionNotes" placeholder="Notes..." value="{{session.sessionNotes}}">
+        <div class = "text-danger">
+            {{session.sessionNotesError}}
+        </div>
+    </div>
+    <div class="form-group"><!-- creating buttons with bootstrap to navigate through the web page -->
+        <button type = "submit" class="btn btn-info"><i class = "fa fa-database"></i> Submit</button>    <!-- submit button with styling from bootstrap -->
+        <a class="btn btn-secondary" href="/session/list"><i class="fa fa-list-alt"></i> View All</a>
+        <a class="btn btn-secondary" style="background-color: blue;" href="/client"><i class="fa fa-list-alt"></i> Client Entry</a>
+        <a class="btn btn-secondary" style="background-color: lightblue;" href="/therapist"><i class="fa fa-list-alt"></i> Therapist Entry</a>
+    </div>
+</form>

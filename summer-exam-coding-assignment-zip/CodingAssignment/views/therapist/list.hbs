@@ -1,0 +1,43 @@
+<!-- list of all data, with buttons for navigating the web page, updating data and deleting data -->
+<h3><a class="btn btn-secondary" href="/therapist"><i class="fa fa-plus"></i> Create New</a> Therapist List</h3>
+<a class="btn btn-secondary" style="background-color: blue;" href="/client/list"><i class="fa fa-list-alt"></i> Client List</a>
+<a class="btn btn-secondary" style="background-color: blue;" href="/session/list"><i class="fa fa-list-alt"></i> Session List</a>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Title</th>
+            <th>First Name</th>
+            <th>Surname</th>
+            <th>Mobile Phone Number</th>
+            <th>Home Phone Number</th>
+            <th>Email</th>
+            <th>Address Line 1</th>
+            <th>Address Line 2</th>
+            <th>Town</th>
+            <th>County/City</th>
+            <th>Eircode</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.title}}</td>
+            <td>{{this.fname}}</td>
+            <td>{{this.sname}}</td>
+            <td>{{this.mobilePhone}}</td>
+            <td>{{this.homePhone}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.addressLine1}}</td>
+            <td>{{this.addressLine2}}</td>
+            <td>{{this.town}}</td>
+            <td>{{this.countyCity}}</td>
+            <td>{{this.eircode}}</td>
+            <td>
+                <a href="/therapist/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/therapist/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

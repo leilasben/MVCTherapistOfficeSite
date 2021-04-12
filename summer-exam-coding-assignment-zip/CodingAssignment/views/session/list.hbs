@@ -1,0 +1,42 @@
+<!-- list of all data, with buttons for navigating the web page, updating data and deleting data -->
+<h3><a class="btn btn-secondary" href="/session"><i class="fa fa-plus"></i> Create New</a> Session List</h3>
+<a class="btn btn-secondary" style="background-color: blue;" href="/therapist/list"><i class="fa fa-list-alt"></i> Therapist List</a>
+<a class="btn btn-secondary" style="background-color: blue;" href="/client/list"><i class="fa fa-list-alt"></i> Client List</a>
+<table class="table table-striped" >
+    <thead class="thead-dark">
+        <tr>
+            <th>Session Date</th>
+            <th>Session Time</th>
+            <th>Client(s)</th>
+            <th>Therapist Name</th>
+            <th>Fee (euros)</th>
+            <th>Session Number</th>
+            <th>Session Duration</th>
+            <th>Session Type</th>
+            <th>Issue Flag</th>
+            <th>Session Notes</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.sessionDate}}</td>
+            <td>{{this.sessionTime}}</td>
+            <td>{{this.clients}}</td>
+            <td>{{this.therapist}}</td>
+            <td>{{this.fee}}</td>
+            <td>{{this.sessionNum}}</td>
+            <td>{{this.sessionDuration}}</td>
+            <td>{{this.sessionType}}</td>
+            <td>{{this.issueFlag}}</td>
+            <td>{{this.sessionNotes}}</td>
+            <td>
+                <a href="/session/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/session/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</h2>

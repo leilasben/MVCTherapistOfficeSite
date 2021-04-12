@@ -1,0 +1,77 @@
+**CLIENTS**
+{
+    "title": "Miss",
+    "fname": "Jenny",
+    "sname": "Green",
+    "mobilePhone": "0874569873",
+    "homePhone": "0499056875",
+    "email": "jennygreen@email.com",
+    "addressLine1": "5 June Walk",
+    "addressLine2": "Petal Lane",
+    "town": "Kells",
+    "countyCity": "Meath",
+    "eircode": "A82 J6K2",
+    "DOB": "19/03/1989",
+    "pgName": "",
+    "permissions": "N",
+    "registrationDate": "14/05/2020",
+    "maritalStatus": "Single",
+    "referredBy": "Dr Singh",
+    "__v": 0
+}
+
+{
+    "title": "Mr",
+    "fname": "Liam",
+    "sname": "Kelly",
+    "mobilePhone": "0891239875",
+    "homePhone": "0465014569",
+    "email": "liam.kelly@work.com",
+    "addressLine1": "62 The Park",
+    "addressLine2": "",
+    "town": "Navan",
+    "countyCity": "Meath",
+    "eircode": "A82 C9H2",
+    "DOB": {
+        "$date": "1985-03-19T00:00:00.000Z"
+    },
+    "pgName": "N/A",
+    "permissions": "Y",
+    "registrationDate": {
+        "$date": "2020-04-09T00:00:00.000Z"
+    },
+    "maritalStatus": "Divorced",
+    "referredBy": "Dr Green",
+    "__v": 0
+}
+ **SESSIONS**
+{
+    "sessionDate": {
+        "$date": "2020-05-01T00:00:00.000Z"
+    },
+    "sessionTime": "15:30:00",
+    "clients": "Jenny Green",
+    "therapist": "Dr Brigitte Reinhardt",
+    "fee": "150",
+    "sessionNumber": 1,
+    "sessionDuration": "60",
+    "sessionType": "Assessment",
+    "issueFlag": "N",
+    "sessionNotes": "In good health",
+    "__v": 0
+}
+**THERAPISTS**
+{
+    "title": "Dr",
+    "fname": "Brigitte",
+    "sname": "Reinhardt",
+    "mobilePhone": "0879874563",
+    "homePhone": "0465489523",
+    "email": "brig.rein@work.net",
+    "addressLine1": "7 Yam Street",
+    "addressLine2": "",
+    "town": "Trim",
+    "countyCity": "Meath",
+    "eircode": "",
+    "__v": 0
+}
